@@ -418,7 +418,7 @@
  * heater. If your configuration is significantly different than this and you don't understand
  * the issues involved, don't use bed PID until someone else verifies that your hardware works.
  */
-#define PIDTEMPBED
+//#define PIDTEMPBED
 
 //#define BED_LIMIT_SWITCHING
 
@@ -431,7 +431,6 @@
 #define MAX_BED_POWER 255 // limits duty cycle to bed; 255=full current
 
 #if ENABLED(PIDTEMPBED)
-
   //#define PID_BED_DEBUG // Sends debug data to the serial port.
 
   //120V 250W silicone heater into 4mm borosilicate (MendelMax 1.5+)
@@ -643,7 +642,7 @@
 #define DEFAULT_TRAVEL_ACCELERATION   500    // X, Y, Z acceleration for travel (non printing) moves
 
 /**
- * Default Jerk (mm/s)
+ * Default Jerk limits (mm/s)
  * Override with M205 X Y Z E
  *
  * "Jerk" specifies the minimum speed change that requires acceleration.
@@ -1261,12 +1260,13 @@
 // @section temperature
 
 // Preheat Constants (ABS)
-#define PREHEAT_1_TEMP_HOTEND 250
-#define PREHEAT_1_TEMP_BED    110
+#define PREHEAT_1_TEMP_HOTEND 240
+#define PREHEAT_1_TEMP_BED    100
 #define PREHEAT_1_FAN_SPEED   255 // Value from 0 to 255
 
-#define PREHEAT_2_TEMP_HOTEND 240
-#define PREHEAT_2_TEMP_BED     80
+// Preheat Constants (PLA)
+#define PREHEAT_2_TEMP_HOTEND 185
+#define PREHEAT_2_TEMP_BED    45
 #define PREHEAT_2_FAN_SPEED   255 // Value from 0 to 255
 
 /**
